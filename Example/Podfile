@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'SBStripeView', :exclusive => true do
+  pod "SBStripeView", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "SBStripeView", :path => "../"
+
+  
+end
