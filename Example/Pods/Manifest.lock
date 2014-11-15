@@ -1,0 +1,14 @@
+PODS:
+  - SBStripeView (0.1.0)
+
+DEPENDENCIES:
+  - SBStripeView (from `../`)
+
+EXTERNAL SOURCES:
+  SBStripeView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SBStripeView: 0b00be8ab09814a691af5d344e2c13670846a964
+
+COCOAPODS: 0.34.1

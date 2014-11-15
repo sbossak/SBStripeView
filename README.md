@@ -20,7 +20,7 @@ it, simply add the following line to your Podfile:
 
 ## Author
 
-Scott Bossak, sbossak@thrillist.com
+Scott Bossak
 
 ## License
 

@@ -1,0 +1,5 @@
+#include "Pods-SBStripeView-SBStripeView.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/SBStripeView" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/SBStripeView"
+OTHER_LDFLAGS = ${PODS_SBSTRIPEVIEW_SBSTRIPEVIEW_OTHER_LDFLAGS} -ObjC
+PODS_ROOT = ${SRCROOT}

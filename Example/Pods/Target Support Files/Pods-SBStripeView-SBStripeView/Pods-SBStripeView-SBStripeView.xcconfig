@@ -1,0 +1,1 @@
+PODS_SBSTRIPEVIEW_SBSTRIPEVIEW_OTHER_LDFLAGS = -framework "MapKit" -framework "UIKit"
