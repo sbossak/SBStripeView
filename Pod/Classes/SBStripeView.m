@@ -48,6 +48,7 @@ static CGFloat const kDefaultBarAngle = 25;
 
 - (void)setup {
     
+    self.shouldDrawStipes = YES;
     self.barWidth = kDefaultBarWidth;
     self.barAngle = kDefaultBarAngle;
     
@@ -60,33 +61,37 @@ static CGFloat const kDefaultBarAngle = 25;
 }
 
 - (void)drawRect:(CGRect)rect {
+    [super drawRect:rect] ;
     
-    CGFloat xOffset = 0;
-    
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-    
-    CGContextRotateCTM(ctx, DegreesToRadians(self.barAngle));
-    
-    for (NSInteger i = 0; i <= self.numberOfBars+1; i++) {
+    if (self.shouldDrawStripes)
+    {
+        CGFloat xOffset = 0;
         
-        CGRect stripe = CGRectMake(xOffset,
-                                   0,
-                                   self.barWidth,
-                                   CGRectGetHeight(rect)*2);
+        CGContextRef ctx = UIGraphicsGetCurrentContext();
         
-        NSLog(@"%li: %@", (long)i, NSStringFromCGRect(stripe));
+        CGContextRotateCTM(ctx, DegreesToRadians(self.barAngle));
         
-        if (i % 2 == 0) {
-            CGContextSetFillColorWithColor(ctx, self.firstColor.CGColor);
-        } else {
-            CGContextSetFillColorWithColor(ctx, self.secondColor.CGColor);
+        for (NSInteger i = 0; i <= self.numberOfBars+1; i++) {
+            
+            CGRect stripe = CGRectMake(xOffset,
+                                       0,
+                                       self.barWidth,
+                                       CGRectGetHeight(rect)*2);
+            
+            NSLog(@"%li: %@", (long)i, NSStringFromCGRect(stripe));
+            
+            if (i % 2 == 0) {
+                CGContextSetFillColorWithColor(ctx, self.firstColor.CGColor);
+            } else {
+                CGContextSetFillColorWithColor(ctx, self.secondColor.CGColor);
+            }
+            
+            CGContextConcatCTM(ctx, CGAffineTransformMakeTranslation(0, self.barWidth/-2));
+            
+            CGContextFillRect(ctx, stripe);
+            
+            xOffset += self.barWidth;
         }
-        
-        CGContextConcatCTM(ctx, CGAffineTransformMakeTranslation(0, self.barWidth/-2));
-        
-        CGContextFillRect(ctx, stripe);
-        
-        xOffset += self.barWidth;
     }
     
 }
