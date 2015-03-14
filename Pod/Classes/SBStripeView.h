@@ -13,10 +13,9 @@
 @property (nonatomic, strong) UIColor *firstColor;
 @property (nonatomic, strong) UIColor *secondColor;
 
-@property (nonatomic, assign) BOOL shouldDrawStripes;
-
-
 @property (nonatomic, assign) CGFloat barWidth;
+
+@property (nonatomic, assign) BOOL shouldDrawStripes;
 
 - (void)update;
 
