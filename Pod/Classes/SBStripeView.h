@@ -15,6 +15,8 @@
 
 @property (nonatomic, assign) CGFloat barWidth;
 
+@property (nonatomic, assign) BOOL shouldDrawStripes;
+
 - (void)update;
 
 @end
