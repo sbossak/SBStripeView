@@ -48,7 +48,7 @@ static CGFloat const kDefaultBarAngle = 25;
 
 - (void)setup {
     
-    self.shouldDrawStipes = YES;
+    self.shouldDrawStripes = YES;
     self.barWidth = kDefaultBarWidth;
     self.barAngle = kDefaultBarAngle;
     
